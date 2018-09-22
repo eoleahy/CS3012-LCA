@@ -1,4 +1,7 @@
-import BST as Tree
+from BST import Node
+from BST import Tree
 
-a=Tree.Node(5)
-print(a.val)
+tree = Tree()
+tree.insert(5)
+
+print(tree.getRoot().val)
