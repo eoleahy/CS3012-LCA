@@ -13,8 +13,11 @@ class Tree:
     def getRoot(self):
         return self.root
 
+    def isEmpty(self):
+            return self.root is None
+
     def insert(self, val):
-        if(self.root == None):
+        if(self.isEmpty()):
             self.root = Node(val)
         else:
             self._insert(val, self.root)
