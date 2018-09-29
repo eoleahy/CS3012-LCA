@@ -14,7 +14,7 @@ class Tree:
         return self.root
 
     def isEmpty(self):
-            return self.root is None
+        return self.root is None
 
     def insert(self, val):
         if(self.isEmpty()):
@@ -33,3 +33,35 @@ class Tree:
                 self._insert(val, node.right)
             else:
                 node.right = Node(val)
+
+    def findPath(self,root, path, value):
+        if root is None:
+            return False
+
+        path.append(root.val)
+
+        if(root.val ==value):
+            return True
+
+        if((root.left != None and self.findPath(root.left, path, value)) or
+            (root.right != None and self.findPath(root.right, path, value))):
+            return True
+
+        path.pop()
+        return False
+
+    def lca(self,root, valA, valB):
+
+        pathA =[]
+        pathB =[]
+
+        if(not self.findPath(self.root, pathA, valA) or not self.findPath(self.root, pathB, valB)):
+            return -1
+
+        i=0
+        while(i<len(pathA) and i< len(pathB)):
+            if(pathA[i] != pathB[i]):
+                break
+            i+= 1
+
+        return pathA[i-1]
