@@ -7,6 +7,7 @@ class TestBSTMethods(unittest.TestCase):
         pass
 
     def testInsert(self):
+        print("Branch")
         tree=Tree()
         tree.insert(5)
         self.assertEqual(tree.getRoot().val,5)
