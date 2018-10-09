@@ -1,4 +1,4 @@
-from BST import *
+from BST-DAG import *
 import unittest
 
 class TestBSTMethods(unittest.TestCase):
