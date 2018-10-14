@@ -1,4 +1,5 @@
-from BST-DAG import *
+from BSTDAG import *
+import networkx as nx
 import unittest
 
 class TestBSTMethods(unittest.TestCase):
